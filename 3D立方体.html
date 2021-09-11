@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;padding: 0;
+			}
+			._3d{
+				width: 400px;
+				height: 400px;
+				/* border: #000000 dashed 1px; */
+				line-height: 400px;
+				font-size: 100px;
+				text-align: center;
+				margin: 300px;
+				transform:rotateX(-10deg) rotateY(10deg);
+				/* perspective: 1000px; */		/* 设置透视效果 旋转时会保留透视效果，为了旋转时效果更好可注释掉透视*/
+				transform-style: preserve-3d;		/* 使被转换的元素保留3D转换 */
+				transition:1s;
+				
+			}
+			._3d div {
+				width: 400px;
+				height: 400px;
+				position: absolute;			/* 绝对定位，使div脱离文档流，后面的div就会补齐前一个div的位置 进行定位*/
+				
+				
+			}
+			.left{
+				
+				background-color: rgba(0,0,0,0.2);
+				transform:translateX(-200px) rotateY(-90deg);
+			}
+			.right{
+				
+				background-color: rgba(0, 255, 0, 0.2);
+				transform: translateX(200px) rotateY(90deg);
+			}
+			.up{
+				background-color: rgba(170, 0, 0, 0.2);
+				transform: translateY(-200px) rotateX(90deg);
+			}
+			.down{
+				
+				background-color: rgba(255, 255, 0, 0.2);
+				transform: translateY(200px) rotateX(-90deg);
+			}
+			.front{
+				
+				background-color: rgba(85, 0, 255, 0.2);
+				transform: translateZ(200px);
+				
+			}
+			.back{
+				
+				background-color: rgba(85, 255, 255, 0.2);
+				transform: translateZ(-200px);
+				
+			}
+			._3d:hover{
+				
+				transform:rotateX(-80deg) rotateY(80deg);			/* 悬浮样式 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="_3d">
+			<div class="left">左</div>
+			<div class="right">右</div>
+			<div class="up">上</div>
+			<div class="down">下</div>
+			<div class="front">前</div>
+			<div class="back">后</div>
+		</div>
+	</body>
+</html>
